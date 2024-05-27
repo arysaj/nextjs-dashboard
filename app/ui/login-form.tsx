@@ -10,6 +10,7 @@ import { ArrowRightIcon } from '@heroicons/react/20/solid';
 import { Button } from './button';
 import { useFormState, useFormStatus } from 'react-dom';
 import { authenticate } from '../lib/actions';
+import Link from 'next/link';
 
 export default function LoginForm() {
   const [errorMessage, dispatch] = useFormState(authenticate, undefined);
@@ -73,6 +74,9 @@ export default function LoginForm() {
               <p className='text-sm text-red-500'>{errorMessage}</p>
             </>
           )}
+        </div>
+        <div className="flex h-8 items-center space-x-1 justify-center">
+          <Link href='registry'>Registry</Link>
         </div>
       </div>
     </form>
